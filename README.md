@@ -1,5 +1,7 @@
 # Generador de Tablas de Verdad
 
+Versión: 1.1 (18/09/2025)
+
 Aplicación web para construir expresiones de lógica proposicional y generar su tabla de verdad paso a paso.
 
 ## Características
@@ -49,5 +51,14 @@ Si agregas nuevas variables:
 
 ## Licencia
 Uso personal/educativo.
+
+## Changelog
+
+- 1.1 (18/09/2025)
+  - Normalización de mayúsculas para variables (acepta P, Q, ...).
+  - Reescritura de generación de subexpresiones: ahora divide por el operador de menor precedencia a nivel superior (p. ej. ↔) y garantiza columnas intermedias como `¬p`, `¬p∨q`, `p→q`.
+  - Corrección del orden de análisis: se prioriza detectar el operador binario tope antes de tratar negaciones, evitando errores en expresiones como `¬(p∨q)↔(¬p∧¬q)`.
+  - Comentarios JSDoc y notas de mantenimiento en `script.js`; comentarios de estructura en `index.html`; cabecera descriptiva en `styles.css`.
+  - Indicador de versión y fecha en el footer de `index.html`.
 
 
