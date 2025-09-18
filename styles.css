@@ -1,3 +1,12 @@
+/*
+ Hoja de estilos - Generador de Tablas de Verdad
+ - Define paleta, tipografías, layout y componentes (display, controles, botones, tabla, errores).
+ - Mantener consistencia con variables CSS declaradas en :root.
+ - Los colores de botones por sección (variables/operadores/paréntesis) ayudan a identificar su función.
+ - Responsive: bloques al final para mobile/tablet/desktop.
+ Mantenimiento: Si agregas nuevos botones o secciones, reutiliza las utilidades y variables.
+*/
+
 /* Reset y variables CSS */
 * {
     margin: 0;
@@ -10,76 +19,76 @@
     --primary-color: #3b82f6;
     --primary-dark: #2563eb;
     --primary-light: #60a5fa;
-    
+
     --secondary-color: #8b5cf6;
     --secondary-dark: #7c3aed;
     --secondary-light: #a78bfa;
-    
+
     --accent-color: #06b6d4;
     --accent-dark: #0891b2;
     --accent-light: #22d3ee;
-    
+
     --success-color: #10b981;
     --success-dark: #059669;
     --success-light: #34d399;
-    
+
     --warning-color: #f59e0b;
     --warning-dark: #d97706;
     --warning-light: #fbbf24;
-    
+
     --error-color: #ef4444;
     --error-dark: #dc2626;
     --error-light: #f87171;
-    
+
     --purple-color: #a855f7;
     --purple-dark: #9333ea;
     --purple-light: #c084fc;
-    
+
     --pink-color: #ec4899;
     --pink-dark: #db2777;
     --pink-light: #f472b6;
-    
+
     --orange-color: #f97316;
     --orange-dark: #ea580c;
     --orange-light: #fb923c;
-    
+
     --teal-color: #14b8a6;
     --teal-dark: #0d9488;
     --teal-light: #5eead4;
-    
+
     --indigo-color: #6366f1;
     --indigo-dark: #4f46e5;
     --indigo-light: #818cf8;
-    
+
     /* Colores de fondo */
     --bg-primary: #ffffff;
     --bg-secondary: #f8fafc;
     --bg-tertiary: #f1f5f9;
     --bg-dark: #1e293b;
     --bg-darker: #0f172a;
-    
+
     /* Colores de texto */
     --text-primary: #1e293b;
     --text-secondary: #64748b;
     --text-muted: #94a3b8;
     --text-white: #ffffff;
-    
+
     /* Colores de borde */
     --border-light: #e2e8f0;
     --border-medium: #cbd5e1;
     --border-dark: #94a3b8;
-    
+
     /* Sombras mejoradas */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
     --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-    
+
     /* Tipografías */
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
-    
+
     /* Espaciado */
     --space-xs: 0.25rem;
     --space-sm: 0.5rem;
@@ -88,7 +97,7 @@
     --space-xl: 2rem;
     --space-2xl: 3rem;
     --space-3xl: 4rem;
-    
+
     /* Bordes redondeados */
     --radius-sm: 0.375rem;
     --radius-md: 0.5rem;
@@ -96,7 +105,7 @@
     --radius-xl: 1rem;
     --radius-2xl: 1.5rem;
     --radius-3xl: 2rem;
-    
+
     /* Breakpoints */
     --mobile: 480px;
     --tablet: 768px;
@@ -339,7 +348,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.5s;
 }
 
@@ -391,7 +400,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.5s;
 }
 
@@ -467,7 +476,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.5s;
 }
 
@@ -631,6 +640,7 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -641,9 +651,11 @@ body {
     0% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(0.95);
     }
+
     100% {
         transform: scale(1);
     }
@@ -654,6 +666,7 @@ body {
         transform: translateX(-100%);
         opacity: 0;
     }
+
     to {
         transform: translateX(0);
         opacity: 1;
@@ -679,81 +692,81 @@ body {
     body {
         padding: var(--space-sm);
     }
-    
+
     .container {
         min-height: 95vh;
     }
-    
+
     .header {
         padding: var(--space-sm);
     }
-    
+
     .title {
         font-size: 1.25rem;
     }
-    
+
     .calculator-section {
         padding: var(--space-md);
         gap: var(--space-md);
     }
-    
+
     .calculator-display {
         padding: var(--space-md);
     }
-    
+
     .expression-display {
         font-size: 1rem;
         min-height: 50px;
     }
-    
+
     .calculator-controls {
         flex-direction: column;
         align-items: stretch;
     }
-    
+
     .control-btn,
     .generate-btn {
         width: 100%;
         min-width: auto;
         padding: var(--space-sm);
     }
-    
+
     .button-section {
         padding: var(--space-md);
     }
-    
+
     .button-grid {
         grid-template-columns: repeat(5, 1fr);
         gap: var(--space-sm);
     }
-    
+
     .variable-btn,
     .operator-btn,
     .parenthesis-btn {
         min-height: 50px;
         padding: var(--space-sm);
     }
-    
+
     .btn-char {
         font-size: 1rem;
     }
-    
+
     .btn-label {
         font-size: 0.5rem;
     }
-    
+
     .section-title {
         font-size: 0.875rem;
     }
-    
+
     .result-section {
         padding: var(--space-md);
     }
-    
+
     .truth-table {
         font-size: 0.75rem;
     }
-    
+
     .truth-table th,
     .truth-table td {
         padding: var(--space-sm);
@@ -765,30 +778,30 @@ body {
     .container {
         max-width: 1000px;
     }
-    
+
     .calculator-panel {
         grid-template-columns: 1fr;
         gap: var(--space-lg);
     }
-    
+
     .button-grid {
         grid-template-columns: repeat(6, 1fr);
     }
-    
+
     .variable-btn,
     .operator-btn,
     .parenthesis-btn {
         min-height: 60px;
     }
-    
+
     .btn-char {
         font-size: 1.125rem;
     }
-    
+
     .btn-label {
         font-size: 0.625rem;
     }
-    
+
     .expression-display {
         font-size: 1.25rem;
     }
@@ -799,24 +812,24 @@ body {
     .container {
         max-width: 1100px;
     }
-    
+
     .calculator-panel {
         grid-template-columns: 1fr 1fr;
         gap: var(--space-lg);
     }
-    
+
     .variables-section {
         grid-column: 1 / -1;
     }
-    
+
     .button-grid {
         grid-template-columns: repeat(10, 1fr);
     }
-    
+
     .operators-section .button-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-    
+
     .parentheses-section .button-grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -827,34 +840,34 @@ body {
     .container {
         max-width: 1200px;
     }
-    
+
     .calculator-panel {
         grid-template-columns: 1fr 1fr 1fr;
         gap: var(--space-lg);
     }
-    
+
     .button-grid {
         grid-template-columns: repeat(5, 1fr);
     }
-    
+
     .operators-section .button-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-    
+
     .parentheses-section .button-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-    
+
     .variable-btn,
     .operator-btn,
     .parenthesis-btn {
         min-height: 70px;
     }
-    
+
     .btn-char {
         font-size: 1.375rem;
     }
-    
+
     .btn-label {
         font-size: 0.75rem;
     }
@@ -866,31 +879,31 @@ body {
         max-width: 1980px;
         margin: 0 auto;
     }
-    
+
     .calculator-panel {
         grid-template-columns: 1fr 1fr 1fr;
         gap: var(--space-2xl);
     }
-    
+
     .button-grid {
         grid-template-columns: repeat(5, 1fr);
     }
-    
+
     .variable-btn,
     .operator-btn,
     .parenthesis-btn {
         min-height: 100px;
         padding: var(--space-xl);
     }
-    
+
     .btn-char {
         font-size: 2rem;
     }
-    
+
     .btn-label {
         font-size: 1rem;
     }
-    
+
     .expression-display {
         font-size: 2rem;
         min-height: 100px;
@@ -935,7 +948,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
     transform: translateX(-100%);
     animation: slideIn 2s infinite;
 }

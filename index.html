@@ -1,14 +1,31 @@
 <!DOCTYPE html>
+<!--
+  Aplicación: Generador de Tablas de Verdad
+  Estructura general del documento:
+  - Header: título
+  - Main: sección de calculadora (display + controles + panel de botones) y sección de resultados/errores
+  - Footer: pie informativo
+  Uso:
+  - Construye expresiones con los botones; el teclado está deshabilitado para evitar caracteres no soportados.
+  - Operadores: ¬ (NOT), ∧ (AND), ∨ (OR), ⊕ (XOR), → (Implica), ↔ (Bicondicional).
+  - Alias aceptados: and/& , or/| , not/! , xor/^ , -> , <-> / <=> .
+  Mantenimiento:
+  - Si agregas un operador/variable nuevo, recuerda actualizar el JS y la UI.
+-->
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tablas de Verdad - Lógica Online</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="container">
         <header class="header">
@@ -18,12 +35,14 @@
         <main class="main">
             <div class="calculator-section">
                 <div class="calculator-display">
+                    <!-- Área donde se muestra la expresión actual o ejemplos dinámicos -->
                     <div class="expression-display" id="expression-display">
                         <span class="placeholder-text">Construye tu expresión lógica</span>
                     </div>
                 </div>
-                
+
                 <div class="calculator-controls">
+                    <!-- Controles de edición y generación de tabla -->
                     <button id="backspace-btn" class="control-btn backspace-btn">
                         <span class="btn-icon">⌫</span>
                         <span class="btn-text">Borrar</span>
@@ -37,7 +56,7 @@
                         <span class="btn-text">Generar Tabla</span>
                     </button>
                 </div>
-                
+
                 <div class="calculator-panel">
                     <div class="button-section variables-section">
                         <div class="section-header">
@@ -77,7 +96,7 @@
                             </button>
                         </div>
                     </div>
-                    
+
                     <div class="button-section operators-section">
                         <div class="section-header">
                             <div class="section-icon">⚡</div>
@@ -110,7 +129,7 @@
                             </button>
                         </div>
                     </div>
-                    
+
                     <div class="button-section parentheses-section">
                         <div class="section-header">
                             <div class="section-icon">📐</div>
@@ -146,6 +165,7 @@
                 </div>
             </div>
 
+            <!-- Sección de resultados: se muestra tras generar la tabla -->
             <div class="result-section" id="result-section" style="display: none;">
                 <div class="result-header">
                     <h2 class="result-title">Tabla de Verdad</h2>
@@ -161,6 +181,7 @@
                 </div>
             </div>
 
+            <!-- Sección de errores: muestra mensajes de validación -->
             <div class="error-section" id="error-section" style="display: none;">
                 <div class="error-message" id="error-message"></div>
             </div>
@@ -173,4 +194,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
