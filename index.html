@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas de Verdad - Lógica Online</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Tablas de Verdad</h1>
+        </header>
+
+        <main class="main">
+            <div class="calculator-section">
+                <div class="calculator-display">
+                    <div class="expression-display" id="expression-display">
+                        <span class="placeholder-text">Construye tu expresión lógica</span>
+                    </div>
+                </div>
+                
+                <div class="calculator-controls">
+                    <button id="backspace-btn" class="control-btn backspace-btn">
+                        <span class="btn-icon">⌫</span>
+                        <span class="btn-text">Borrar</span>
+                    </button>
+                    <button id="clear-btn" class="control-btn clear-btn">
+                        <span class="btn-icon">🗑️</span>
+                        <span class="btn-text">Limpiar</span>
+                    </button>
+                    <button id="generate-btn" class="generate-btn">
+                        <span class="btn-icon">⚡</span>
+                        <span class="btn-text">Generar Tabla</span>
+                    </button>
+                </div>
+                
+                <div class="calculator-panel">
+                    <div class="button-section variables-section">
+                        <div class="section-header">
+                            <div class="section-icon">🔤</div>
+                            <h4 class="section-title">Variables</h4>
+                        </div>
+                        <div class="button-grid">
+                            <button class="variable-btn" data-char="p">
+                                <span class="btn-char">p</span>
+                            </button>
+                            <button class="variable-btn" data-char="q">
+                                <span class="btn-char">q</span>
+                            </button>
+                            <button class="variable-btn" data-char="r">
+                                <span class="btn-char">r</span>
+                            </button>
+                            <button class="variable-btn" data-char="s">
+                                <span class="btn-char">s</span>
+                            </button>
+                            <button class="variable-btn" data-char="t">
+                                <span class="btn-char">t</span>
+                            </button>
+                            <button class="variable-btn" data-char="u">
+                                <span class="btn-char">u</span>
+                            </button>
+                            <button class="variable-btn" data-char="v">
+                                <span class="btn-char">v</span>
+                            </button>
+                            <button class="variable-btn" data-char="w">
+                                <span class="btn-char">w</span>
+                            </button>
+                            <button class="variable-btn" data-char="x">
+                                <span class="btn-char">x</span>
+                            </button>
+                            <button class="variable-btn" data-char="y">
+                                <span class="btn-char">y</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="button-section operators-section">
+                        <div class="section-header">
+                            <div class="section-icon">⚡</div>
+                            <h4 class="section-title">Operadores</h4>
+                        </div>
+                        <div class="button-grid">
+                            <button class="operator-btn not-btn" data-char="¬">
+                                <span class="btn-char">¬</span>
+                                <span class="btn-label">NOT</span>
+                            </button>
+                            <button class="operator-btn and-btn" data-char="∧">
+                                <span class="btn-char">∧</span>
+                                <span class="btn-label">AND</span>
+                            </button>
+                            <button class="operator-btn or-btn" data-char="∨">
+                                <span class="btn-char">∨</span>
+                                <span class="btn-label">OR</span>
+                            </button>
+                            <button class="operator-btn xor-btn" data-char="⊕">
+                                <span class="btn-char">⊕</span>
+                                <span class="btn-label">XOR</span>
+                            </button>
+                            <button class="operator-btn impl-btn" data-char="→">
+                                <span class="btn-char">→</span>
+                                <span class="btn-label">IMPL</span>
+                            </button>
+                            <button class="operator-btn bicond-btn" data-char="↔">
+                                <span class="btn-char">↔</span>
+                                <span class="btn-label">BICOND</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="button-section parentheses-section">
+                        <div class="section-header">
+                            <div class="section-icon">📐</div>
+                            <h4 class="section-title">Paréntesis</h4>
+                        </div>
+                        <div class="button-grid">
+                            <button class="parenthesis-btn round-btn" data-char="(">
+                                <span class="btn-char">(</span>
+                                <span class="btn-label">ROUND</span>
+                            </button>
+                            <button class="parenthesis-btn round-btn" data-char=")">
+                                <span class="btn-char">)</span>
+                                <span class="btn-label">ROUND</span>
+                            </button>
+                            <button class="parenthesis-btn square-btn" data-char="[">
+                                <span class="btn-char">[</span>
+                                <span class="btn-label">SQUARE</span>
+                            </button>
+                            <button class="parenthesis-btn square-btn" data-char="]">
+                                <span class="btn-char">]</span>
+                                <span class="btn-label">SQUARE</span>
+                            </button>
+                            <button class="parenthesis-btn curly-btn" data-char="{">
+                                <span class="btn-char">{</span>
+                                <span class="btn-label">CURLY</span>
+                            </button>
+                            <button class="parenthesis-btn curly-btn" data-char="}">
+                                <span class="btn-char">}</span>
+                                <span class="btn-label">CURLY</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-section" id="result-section" style="display: none;">
+                <div class="result-header">
+                    <h2 class="result-title">Tabla de Verdad</h2>
+                    <div class="result-info">
+                        <span class="variable-count" id="variable-count"></span>
+                        <span class="row-count" id="row-count"></span>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table class="truth-table" id="truth-table">
+                        <!-- La tabla se generará dinámicamente -->
+                    </table>
+                </div>
+            </div>
+
+            <div class="error-section" id="error-section" style="display: none;">
+                <div class="error-message" id="error-message"></div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Generador de Tablas de Verdad - Lógica Proposicional</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
